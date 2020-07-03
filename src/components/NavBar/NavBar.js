@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IoIosList } from 'react-icons/io';
+import { IoIosClose } from 'react-icons/io';
 import SearchBox from '../SearchBox/SearchBox';
 import classes from './NavBar.module.scss';
 
@@ -12,6 +13,7 @@ const mainMenuItems = [
 ];
 
 export default (props) => {
+  const [showMenu, setShowMenu] = useState(false);
   const setMenuContent = (item) => {
     return item.href ? (
       <NavLink exact to={item.href}>
@@ -23,15 +25,23 @@ export default (props) => {
   };
 
   const getTemplate = (item, index) => (
-    <li key={index} className="menu-item">
+    <li key={index} onClick={() => setShowMenu(false)} className="menu-item">
       {setMenuContent(item)}
     </li>
   );
 
   const makeNavMenu = (menuItems = []) => {
     return (
-      <ul className={`${classes.MainMenu}`}>
-        {menuItems.map((item, index) => getTemplate(item, index))}
+      <ul
+        className={`${classes.MainMenu} transitio main-menu ${
+          showMenu ? 'show-menu' : ''
+        }`}
+      >
+        <IoIosClose
+          className="icon main-menu__close-icon"
+          onClick={() => setShowMenu(false)}
+        />
+        <div>{menuItems.map((item, index) => getTemplate(item, index))}</div>
       </ul>
     );
   };
@@ -47,7 +57,10 @@ export default (props) => {
 
         <SearchBox className="hide-until-tablet" />
 
-        <IoIosList className="icon show-until-desktop" />
+        <IoIosList
+          onClick={() => setShowMenu(true)}
+          className="icon show-until-desktop"
+        />
 
         {makeNavMenu(mainMenuItems)}
       </nav>

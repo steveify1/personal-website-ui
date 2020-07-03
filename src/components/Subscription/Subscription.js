@@ -9,9 +9,9 @@ function Subscription() {
   return (
     <Fragment>
       <SubscriptionForm onSuccess={() => setShow(true)} />
-      <Modal showModal={show} onLightBoxClick={() => setShow(false)}>
+      {/* <Modal showModal={show} onLightBoxClick={() => setShow(false)}>
         Thanks for subscribing!
-      </Modal>
+      </Modal> */}
     </Fragment>
   );
 }
