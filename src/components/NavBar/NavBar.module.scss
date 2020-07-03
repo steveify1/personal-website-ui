@@ -1,0 +1,38 @@
+@import '../../sass/modules.scss';
+
+.NavBar {
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 0 1em;
+
+  @media screen and (min-width: 576px) {
+    padding: 0 $globalHSpace;
+  }
+}
+
+.MainMenu,
+.NavBar {
+  align-items: center;
+  display: flex;
+}
+
+.MainMenu {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .MainMenu li {
+    font-size: 0.875rem;
+
+    &:not(:last-child) {
+      margin-right: 1.5em;
+    }
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .MainMenu {
+    display: flex;
+  }
+}

@@ -1,0 +1,120 @@
+.flex {
+  @include Flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+  @include FlexWrap(wrap);
+}
+
+.no-wrap {
+  @include FlexWrap(nowrap);
+}
+
+.no-wrap {
+  @include FlexWrap('wrap-reverse');
+}
+
+.flex-row {
+  @include FlexDirection;
+}
+
+.flex-column {
+  @include FlexDirection(column);
+}
+
+.row-reverse {
+  @include FlexDirection(row-reverse);
+}
+
+.column-reverse {
+  @include FlexDirection(column-reverse);
+}
+
+// GRID
+.grid {
+  @include Grid;
+}
+
+.grid-autofill {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.grid-autofit {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gap-1 {
+  gap: 1em;
+}
+.gap-2 {
+  gap: 2em;
+}
+.gap-3 {
+  gap: 3em;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-col-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-col-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-col-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-col-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+// Justify Content
+.jc-center {
+  justify-content: center;
+}
+
+.jc-even {
+  justify-content: space-evenly;
+}
+
+.jc-space-between {
+  justify-content: space-between;
+}
+
+.jc-space-around {
+  justify-content: space-around;
+}
+
+.jc-flex-end {
+  justify-content: flex-end;
+}
+
+// Align Item
+.ai-center {
+  align-items: center;
+}
+
+.ai-baseline {
+  align-items: baseline;
+}
+
+.ai-space-stretch {
+  align-items: stretch;
+}
+
+.ai-flex-end {
+  align-items: flex-end;
+}
+
+// SPECIFICS
+
+@media screen and (min-width: 768px) {
+  .two-columns {
+    display: flex;
+
+    .column:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+}

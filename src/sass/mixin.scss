@@ -1,0 +1,37 @@
+@mixin BoxShadow($x: 0px, $y: 7px, $blur: 7px, $color: rgba(0, 0, 0, 0.0875)) {
+  box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+}
+
+@mixin BorderRadius($radius: 5px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin Flex() {
+  display: flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+}
+
+@mixin FlexDirection($direction: row) {
+  flex-direction: $direction;
+  -ms-flex-direction: $direction;
+}
+
+@mixin FlexWrap($value) {
+  flex-wrap: $value;
+  -ms-flex-wrap: $value;
+}
+
+@mixin Grid() {
+  display: grid;
+  display: -ms-grid;
+  display: -o-grid;
+  display: -moz-grid;
+  display: -webkit-grid;
+}

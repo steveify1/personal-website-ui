@@ -1,0 +1,20 @@
+.shadow {
+  @include BoxShadow(0, 4px, 5px, rgba(0, 0, 0, 0.3));
+}
+
+.rounded {
+  @include BorderRadius(5px);
+  overflow: hidden;
+}
+
+// Makes a square or rectangle shape inot a circle or an oval
+.rounded--circle {
+  @include BorderRadius(50%);
+}
+
+.transition {
+  transition: 0.4s ease;
+  -moz-transition: 0.4s ease;
+  -o-transition: 0.4s ease;
+  -webkit-transition: 0.4s ease;
+}

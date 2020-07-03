@@ -1,0 +1,29 @@
+@import '../../sass/modules.scss';
+
+.Button {
+  text-transform: capitalize;
+  border: none;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  font-family: inherit;
+  @include BorderRadius(30px);
+}
+
+.Button.Primary {
+  color: var(--inverseTextColor);
+  background: var(--primaryColor);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.Button.Outlined {
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+
+  &:hover {
+    color: var(--inverseTextColor);
+    background: var(--primaryColor);
+  }
+}

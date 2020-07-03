@@ -1,0 +1,17 @@
+:root {
+  --primaryColor: rgb(163, 14, 76);
+  --primaryColor: rgb(14, 163, 76);
+  --primaryColor: rgb(14, 108, 163);
+  // --primaryColor: rgb(32, 0, 121);
+  // --primaryColor: rgb(50, 124, 221);
+  --primaryGradient: linear-gradient(
+    90deg,
+    rgba(240, 26, 115, 0.911),
+    var(--primaryColor) 60%
+  );
+  --secondaryColor: rgb(32, 0, 121);
+  --white: #fff;
+  --textColor: #222;
+  --gray: #222;
+  --inverseTextColor: #fff;
+}

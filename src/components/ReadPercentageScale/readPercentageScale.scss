@@ -1,0 +1,23 @@
+.read-percentage {
+  position: relative;
+  overflow-x: hidden;
+  padding: 0.1em;
+
+  &__scale {
+    background: var(--primaryGradient);
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: 0.5s ease;
+
+    &.sm {
+      height: 2px;
+    }
+    &.md {
+      height: 5px;
+    }
+  }
+}

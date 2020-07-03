@@ -1,0 +1,160 @@
+.card {
+  &.rounded,
+  .rounded {
+    @include BorderRadius(15px);
+    overflow: hidden;
+  }
+  .card__image {
+    margin-bottom: 0.5em;
+    background-color: #888;
+  }
+
+  .card__details {
+    padding: 1em;
+  }
+}
+
+.face-card {
+  width: 100%;
+  max-width: 250px;
+  min-width: 250px;
+  height: fit-content;
+  max-height: 450px;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 2em 0;
+
+  .card__image {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    @include BorderRadius(50%);
+    overflow: hidden;
+
+    @media screen and (min-width: 576px) {
+      height: 150px;
+      width: 150px;
+    }
+  }
+
+  .icon:not(:first-child) {
+    margin-left: 0.1em;
+  }
+}
+
+// PRIMARY CARD
+.primary-card {
+  width: 100%;
+  height: fit-content;
+  max-height: 300px;
+  position: relative;
+
+  .card__image {
+    margin: 0;
+    img {
+      transition: all 0.5s;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+  }
+  .card__title {
+    margin-bottom: 0.5em;
+  }
+}
+
+// SEARCH CARD
+.search-card {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  position: relative;
+
+  .card__details {
+    padding-top: 0;
+  }
+
+  .card__image {
+    margin: 0;
+    width: 25%;
+    height: 60px;
+    height: fit-content;
+    min-width: 80px;
+
+    @media screen and (min-width: 768px) {
+      min-width: 100px;
+    }
+  }
+  .card__title,
+  .card__body {
+    margin-bottom: 0.5em;
+  }
+}
+
+.long-image-card {
+  width: 100%;
+  position: relative;
+
+  .card__image {
+    position: relative;
+    height: 350px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8));
+    }
+
+    img {
+      transition: all 0.5s;
+      opacity: 1;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  .card__details {
+    // background-color: var(--white);
+    text-align: left;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    color: var(--white);
+  }
+}
+
+.circle-card {
+  width: 100%;
+  position: relative;
+
+  .card__image {
+    height: 80px;
+    width: 80px;
+    margin: auto;
+    @include BorderRadius(50%);
+
+    @media screen and (min-width: 576px) {
+      height: 120px;
+      width: 120px;
+    }
+
+    img {
+      transition: all 0.5s;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+  }
+  .card__details {
+    background-color: var(--white);
+    // position: absolute;
+    // bottom: 20%;
+    width: 100%;
+  }
+}

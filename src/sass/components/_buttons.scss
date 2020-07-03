@@ -1,0 +1,133 @@
+// ******* BUTTONS *********
+.btn-group {
+  a.btn,
+  .btn {
+    display: inline;
+  }
+
+  .btn:not(:first-child) {
+    margin-left: 0.3em !important;
+  }
+}
+
+.Button {
+  text-transform: capitalize;
+  border: none;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  font-family: inherit;
+  @include BorderRadius(30px);
+}
+
+.Button.Primary {
+  color: var(--inverseTextColor);
+  background: var(--primaryColor);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.Button.Outlined {
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+
+  &:hover {
+    color: var(--inverseTextColor);
+    background: var(--primaryColor);
+  }
+}
+
+.btn {
+  text-transform: capitalize;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 0 !important;
+  outline: none;
+  border: none;
+  @include BorderRadius(5px);
+  // @include transition(all 0.3s);
+
+  &:hover {
+    opacity: 0.9;
+    // @include transform(scale(1.03));
+  }
+
+  @media screen and (min-width: 576px) {
+    font-size: 0.9rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    font-size: 1.1em;
+  }
+}
+
+.btn-rounded {
+  @include BorderRadius(30px);
+}
+
+.btn-full-width {
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--primaryColor);
+  color: var(--white);
+}
+
+.btn-primary__gradient {
+  background: var(--primaryGradient);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.btn-sm {
+  padding: 0.5em 1em;
+}
+
+.btn-md {
+  padding: 0.65em 1em;
+}
+
+.btn-bg {
+  padding: 0.85em 1.3em;
+}
+
+.btn-success {
+  background-color: rgb(26, 139, 15);
+}
+
+.btn-danger {
+  background-color: rgb(219, 14, 31);
+}
+btn-hollow,
+.btn-hollow-invert {
+  background: transparent;
+}
+
+.btn-hollow {
+  border: 1px solid var(--primaryColor);
+  color: var(--primaryColor);
+}
+
+.btn-hollow-invert {
+  border: 1px solidvar(--white);
+  color: var(--white);
+}
+
+.btn-block {
+  display: block;
+}
+
+.btn.btn-full-width {
+  @extend .btn-block;
+  width: 100%;
+}
+.btn-shadow {
+  // @include boxShadow(0px 0px 25px rgba(27, 6, 75, 0.5));
+  @include BoxShadow(0px 10px 15px rgba(29, 28, 31, 0.3));
+}

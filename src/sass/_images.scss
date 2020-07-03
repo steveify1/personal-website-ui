@@ -1,0 +1,18 @@
+.image-wrapper {
+  width: 100%;
+  @include Flex;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+  object-position: top;
+  -o-object-position: top;
+
+  &.contain {
+    object-fit: contain;
+    -o-object-fit: contain;
+  }
+}

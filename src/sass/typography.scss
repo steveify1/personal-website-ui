@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Oxygen|Trocchi&display=swap');
+
+$primaryFont: 'Poppins';
+$headerFont: 'Trocchi';
+
+$lineHeight: 1.5;
+
+body {
+  font-size: 80%;
+  line-height: $lineHeight;
+}
+
+body,
+.btn {
+  letter-spacing: 1px;
+  font-family: $primaryFont;
+  color: var(--gray);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: $headerFont;
+  // margin-bottom: calc(#{$lineHeight}rem / 2);
+}
+
+.blockquote {
+  margin: 2em auto;
+  width: 95%;
+  max-width: 400px;
+  font-style: italic;
+  text-align: center;
+  opacity: 0.75;
+}
+
+.yotta {
+  font-size: 2.28rem;
+}
+
+.zetta {
+  font-size: 2.027rem;
+}
+
+h1,
+.exa {
+  font-size: 1.802rem;
+}
+
+h2,
+.peta {
+  font-size: 1.602rem;
+}
+
+h3,
+.tera {
+  font-size: 1.424rem;
+}
+
+h4,
+.giga {
+  font-size: 1.266rem;
+}
+
+h5,
+.mega {
+  font-size: 1.125rem;
+}
+
+h6,
+.kilo {
+  font-size: 1rem; // Same as the default font sixe of the paragraph element
+}
+
+.milli {
+  font-size: 0.79rem;
+}
+
+.mini {
+  font-size: 0.7rem;
+}
+
+.micro {
+  font-size: 0.65rem;
+}
+
+// Set Font Weights
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.875;
+}
+
+// Some Beta Styles
+.headline {
+  font-family: $headerFont;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+.headline-1 {
+  font-size: 2.2rem;
+
+  @media screen and (min-width: 578px) {
+    font-size: 3.2rem;
+  }
+}
+
+.headline-2 {
+  font-size: 1.7rem;
+
+  @media screen and (min-width: 578px) {
+    font-size: 2.7rem;
+  }
+}
+.headline-3 {
+  font-size: 1.2rem;
+
+  @media screen and (min-width: 578px) {
+    font-size: 2.2rem;
+  }
+}
+.headline-4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  @media screen and (min-width: 578px) {
+    font-size: 1.8rem;
+  }
+}
+
+// ****** TEXT ALIGNMENT ******
+.ta-center {
+  text-align: center;
+}
+.ta-right {
+  text-align: right;
+}

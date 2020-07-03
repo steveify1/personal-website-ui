@@ -1,0 +1,25 @@
+.about-page {
+  .face-card {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    .grids {
+      display: flex;
+    }
+
+    .face-card {
+      min-width: 300px;
+      position: sticky;
+      top: 50px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .face-card {
+      min-height: 0;
+      padding: 0;
+      background: none;
+    }
+  }
+}

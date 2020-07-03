@@ -1,0 +1,33 @@
+.active-read {
+  position: fixed;
+  bottom: 0.5em;
+  right: -100%;
+  padding: 0.875em 0.7rem;
+  background-color: #fff;
+
+  &.show {
+    right: 1%;
+  }
+
+  &__title {
+    margin-top: 0.2em;
+  }
+
+  &__image {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.3em;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+  }
+
+  a:hover {
+    .active-read__title {
+      color: var(--primaryColor);
+    }
+  }
+}

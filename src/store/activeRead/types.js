@@ -1,0 +1,2 @@
+export const SET_ACTIVE_READ = 'SET_ACTIVE_READ';
+export const UNSET_ACTIVE_READ = 'UNSET_ACTIVE_READ';

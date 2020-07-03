@@ -1,0 +1,179 @@
+$inputBorderColor: rgba(0, 0, 0, 0.13);
+
+.form-container {
+  padding: 1.5em 1em;
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+
+  .form-header {
+    margin-bottom: 1em;
+  }
+
+  .form-title {
+    margin-bottom: 0.5em;
+    // text-align: center;
+    color: var(--gray);
+  }
+  .form-desc {
+    margin: 0.5em auto;
+    color: var(--gray);
+    font-size: 90%;
+  }
+}
+
+.form {
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
+  @include Flex;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+
+// INPUT GROUP
+.input-group {
+  @extend .flex;
+  @extend .rounded;
+  // @include BorderRadius(0);
+  border: 0.5px solid $inputBorderColor;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  &--alt {
+    border: 1px solid var(--white);
+    .form-control,
+    .form-control::placeholder {
+      color: var(--white);
+    }
+  }
+
+  .form-control,
+  .btn {
+    @include BorderRadius(0);
+  }
+
+  .form-control {
+    flex-grow: 1;
+    border: 0;
+    outline: 0;
+
+    &:focus {
+      border: 0;
+      outline: 0;
+    }
+  }
+}
+
+label {
+  text-transform: capitalize;
+  color: var(--gray);
+  margin-bottom: 0.15em;
+
+  .required {
+    color: var(--pink);
+    font-size: 1.3rem;
+  }
+}
+
+label.slide-up {
+  font-size: 0.875rem;
+  color: var(--primaryColor);
+  // @include transform(translateY(0));
+}
+
+.form-container,
+input,
+select,
+textarea {
+  @include BorderRadius(3px);
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+  padding: 0.875em 0.5em;
+  border: 1px solid $inputBorderColor;
+  font-family: $primaryFont;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.focus {
+  outline-color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  // @include BoxShadow(0px 0px 5px lighten(var(--primaryColor), 10%));
+}
+
+input.error,
+select.error,
+textarea.error {
+  outline-color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+}
+.form-footer {
+  margin: 1.5em;
+}
+
+// SEARCH FORMS
+.search-form {
+  // display: none;
+  padding: 0;
+
+  form {
+    display: none;
+  }
+
+  .form-group {
+    border: 0;
+    @include Grid;
+    grid-template-columns: 90% 10%;
+    justify-content: center;
+    margin: auto;
+    overflow: hidden;
+
+    .search-icon {
+      // background-color: darken(var(--primaryColor), 20);
+      height: 100%;
+      margin: auto;
+      border-left: 1px solid rgba(0, 0, 0, 0.13);
+      @include Flex;
+      justify-content: center;
+      // @include alignItems(center);
+      cursor: pointer;
+      @include BoxShadow(-3px 0 4px rgba(0, 0, 0, 0.3));
+
+      img,
+      svg {
+        width: 70%;
+
+        #Search {
+          // fill: transparentize(var(--white), 0.15);
+          // @include transition(fill 0.4s ease);
+
+          &.active {
+            // fill: $orange;
+          }
+        }
+      }
+
+      &:hover {
+        #Search {
+          // fill: $orange;
+        }
+      }
+    }
+
+    input.form-control {
+      border: 1px solid rgba(0, 0, 0, 0513);
+      outline: 0;
+      width: 100%;
+    }
+  }
+}

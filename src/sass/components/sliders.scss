@@ -1,0 +1,55 @@
+.scroll-slider {
+  justify-content: start !important;
+}
+.scroll-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.h-scroll-slider__parent {
+  position: relative;
+}
+
+.h-scroll-slider {
+  overflow-x: auto;
+
+  &__child {
+    width: 100%;
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.slide-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  @include BoxShadow(0px, 5px, 10px, rgba(0, 0, 0, 0.3));
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.rounded {
+    @include BorderRadius(50%);
+    height: 30px;
+    width: 30px;
+
+    @media screen and (min-width: 768px) {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  &:hover {
+    background-color: rgb(218, 218, 218);
+  }
+
+  &.left {
+    left: -3%;
+  }
+  &.right {
+    right: -3%;
+  }
+}
