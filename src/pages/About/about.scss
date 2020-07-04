@@ -3,6 +3,22 @@
     margin: 0 auto;
   }
 
+  .full-description {
+    & > .headline {
+      color: var(--primaryColor);
+    }
+  }
+
+  article[aria-label^='about'] {
+    & > section:not(:last-child) {
+      margin-bottom: 1.5em;
+
+      .headline {
+        text-transform: capitalize;
+      }
+    }
+  }
+
   @media screen and (min-width: 768px) {
     .grids {
       display: flex;
