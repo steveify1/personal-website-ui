@@ -111,10 +111,6 @@ a {
   font-family: $headerFont, sans-serif;
 }
 
-// *** Setting a max-width for the app *** //
-.navbar-container nav {
-}
-
 .navbar-container {
   height: 60px;
   background: var(--inverseTextColor);
@@ -132,4 +128,9 @@ a {
 .categories {
   display: block;
   width: 100%;
+}
+
+// The subscription section on the home page
+.subscription-section {
+  padding: 2em 0;
 }

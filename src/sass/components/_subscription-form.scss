@@ -1,0 +1,38 @@
+.subscription-form {
+  .form-control {
+    color: var(--white);
+    border-color: var(--white);
+    outline: none;
+    margin-bottom: 1em;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.601);
+    }
+  }
+
+  .rounded-corners {
+    @extend .rounded;
+  }
+
+  @media screen and (min-width: 768px) {
+    .form-group {
+      flex-direction: row;
+      width: 100%;
+      margin: auto;
+      max-width: 600px;
+      @extend .rounded-corners;
+      border: 1px solid var(--white);
+    }
+
+    .form-control {
+      flex-grow: 1;
+      border: none;
+      outline: none;
+      margin-bottom: 0;
+    }
+
+    .btn {
+      @include BorderRadius(0);
+    }
+  }
+}

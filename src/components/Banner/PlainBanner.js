@@ -7,9 +7,10 @@ function PlainBanner({ children, type }) {
         type || 'primary'
       }`}
     >
-      <section className="section">
+      {children}
+      {/* <section className="section">
         <section className="section__inner">{children}</section>
-      </section>
+      </section> */}
     </div>
   );
 }

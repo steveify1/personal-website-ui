@@ -25,7 +25,11 @@ export default (props) => {
   };
 
   const getTemplate = (item, index) => (
-    <li key={index} onClick={() => setShowMenu(false)} className="menu-item">
+    <li
+      key={index}
+      onClick={() => setShowMenu(false)}
+      className="menu-item flex"
+    >
       {setMenuContent(item)}
     </li>
   );
@@ -33,15 +37,15 @@ export default (props) => {
   const makeNavMenu = (menuItems = []) => {
     return (
       <ul
-        className={`${classes.MainMenu} transitio main-menu ${
+        className={`${classes.MainMenu} main-menu ${
           showMenu ? 'show-menu' : ''
         }`}
       >
         <IoIosClose
-          className="icon main-menu__close-icon"
+          className="icon main-menu__close-icon show-until-tablet"
           onClick={() => setShowMenu(false)}
         />
-        <div>{menuItems.map((item, index) => getTemplate(item, index))}</div>
+        {menuItems.map((item, index) => getTemplate(item, index))}
       </ul>
     );
   };
@@ -51,7 +55,7 @@ export default (props) => {
       <nav className={classes.NavBar}>
         <div className="brand logo">
           <NavLink to="/">
-            <h4>Gbola Sokoya</h4>
+            <h5>Gbola Sokoya</h5>
           </NavLink>
         </div>
 
@@ -59,7 +63,7 @@ export default (props) => {
 
         <IoIosList
           onClick={() => setShowMenu(true)}
-          className="icon show-until-desktop"
+          className="icon show-until-tablet"
         />
 
         {makeNavMenu(mainMenuItems)}

@@ -24,19 +24,17 @@ function SubscriptionForm({ onSuccess, onError }) {
 
   return (
     <Fragment>
-      <form onSubmit={subscribe}>
-        <div className="form-group">
-          <div className="input-group input-group--alt">
-            <input
-              className="form-control"
-              type="email"
-              placeholder="Please enter a valid email"
-              onChange={({ currentTarget: { value } }) => setEmail(value)}
-            />
-            <button className="btn btn-secondary  btn-shadow btn-md">
-              Subscribe
-            </button>
-          </div>
+      <form className="form subscription-form" onSubmit={subscribe}>
+        <div className="form-group flex-column">
+          <input
+            className="form-control"
+            type="email"
+            placeholder="Please enter a valid email"
+            onChange={({ currentTarget: { value } }) => setEmail(value)}
+          />
+          <button className="btn btn-secondary  btn-shadow btn-md">
+            Subscribe
+          </button>
         </div>
       </form>
     </Fragment>

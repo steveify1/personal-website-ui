@@ -79,7 +79,7 @@ export default (props) => {
 
       <section class="categories section">
         <section className="section__inner">
-          <h3 className="headline">Recent articles</h3>
+          <h4 className="headline mega">Recent articles</h4>
           <HScrollSlide>
             {posts.map((post) => (
               <PrimaryCard
@@ -118,7 +118,7 @@ export default (props) => {
       <section class="categories section">
         <section className="section__inner">
           <div className="flex jc-space-between ai-center headline-bar">
-            <h3 className="headline">Sermons</h3>
+            <h4 className="headline mega">Sermons</h4>
             <Link to="/explore/musings" className="link">
               See all
             </Link>
@@ -138,7 +138,7 @@ export default (props) => {
       <section class="categories section">
         <section className="section__inner">
           <div className="flex jc-space-between ai-center headline-bar">
-            <h3 className="headline">Prayers</h3>
+            <h4 className="headline mega">Prayers</h4>
             <Link to="/explore/musings" className="link">
               See all
             </Link>
@@ -156,7 +156,7 @@ export default (props) => {
       </section>
 
       <PlainBanner>
-        <section className="section">
+        <section className="section subscription-section">
           <section className="section__inner">
             <p className="headline giga">
               Get access to powerful messages and prayers sent directly to your
