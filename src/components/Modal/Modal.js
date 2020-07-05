@@ -1,17 +1,11 @@
 import React, { Fragment } from 'react';
-import useShow from '../../hooks/useShow';
 import LightBox from '../LightBox/LightBox';
 
 function Modal({ showModal, onLightBoxClick, children }) {
-  // const { show, setShow } = useShow(true);
-
   return showModal ? (
     <Fragment>
-      <LightBox onClick={onLightBoxClick} />
-      <div className="modal">
-        {children}
-        Hello world
-      </div>
+      <LightBox onClick={onLightBoxClick} color="hite" />
+      <div className="modal shadow">{children}</div>
     </Fragment>
   ) : null;
 }

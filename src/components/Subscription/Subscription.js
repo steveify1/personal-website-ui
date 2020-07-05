@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import useShow from '../../hooks/useShow';
 import SubscriptionForm from '../SubscriptionForm/SubscriptionForm';
-import Modal from '../Modal/Modal';
+import ContactSuccess from '../ContactSuccess/ContactSuccess';
 
 function Subscription() {
   const { show, setShow } = useShow(false);
@@ -9,9 +9,10 @@ function Subscription() {
   return (
     <Fragment>
       <SubscriptionForm onSuccess={() => setShow(true)} />
-      {/* <Modal showModal={show} onLightBoxClick={() => setShow(false)}>
-        Thanks for subscribing!
-      </Modal> */}
+      <ContactSuccess show={show} onLightBoxClick={() => setShow(false)}>
+        <h4 className="header">Thank you for subscribing!</h4>
+        <p className="header">We've just sent an email you.</p>
+      </ContactSuccess>
     </Fragment>
   );
 }

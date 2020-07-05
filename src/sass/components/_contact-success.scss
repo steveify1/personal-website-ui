@@ -1,0 +1,36 @@
+/* 
+* Targets the modal that pops up when the visitor
+* is successfully subscribed or their message from
+* contact from is received.
+*/
+.contact-success {
+  width: 100%;
+  background-color: var(--white);
+
+  &__header {
+    height: 50px;
+    background: var(--primaryGradient);
+  }
+  &__footer {
+    height: 5px;
+    background: var(--primaryGradient);
+  }
+
+  &__body {
+    color: var(--gray);
+    padding: 1.25em 1em;
+    min-height: 250px;
+
+    .icon {
+      font-size: 5rem;
+      color: var(--primaryColor);
+    }
+
+    p {
+      margin-bottom: 1em;
+    }
+    & > .btn {
+      margin-top: 1.5em;
+    }
+  }
+}

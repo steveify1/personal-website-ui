@@ -17,6 +17,7 @@ function SubscriptionForm({ onSuccess, onError }) {
       if (onSuccess && typeof onSuccess === 'function') {
         onSuccess(email);
       }
+      setEmail('');
     } catch (error) {
       console.log(error.message);
     }
@@ -30,6 +31,7 @@ function SubscriptionForm({ onSuccess, onError }) {
             className="form-control"
             type="email"
             placeholder="Please enter a valid email"
+            value={email}
             onChange={({ currentTarget: { value } }) => setEmail(value)}
           />
           <button className="btn btn-secondary  btn-shadow btn-md">

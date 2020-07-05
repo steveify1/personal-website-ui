@@ -2,11 +2,12 @@
   --primaryColor: rgb(163, 14, 76);
   --primaryColor: rgb(14, 163, 76);
   --primaryColor: rgb(14, 108, 163);
+  --primaryColor: rgba(50, 6, 151, 0.911);
   // --primaryColor: rgb(32, 0, 121);
   // --primaryColor: rgb(50, 124, 221);
   --primaryGradient: linear-gradient(
     90deg,
-    rgba(240, 26, 115, 0.911),
+    rgba(90, 26, 240, 0.911),
     var(--primaryColor) 60%
   );
   --secondaryColor: rgb(32, 0, 121);
