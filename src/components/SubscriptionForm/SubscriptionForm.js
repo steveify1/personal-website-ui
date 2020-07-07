@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import axios from 'axios';
+import elysiaClient from '../../utils/elysiaClient';
 
 function SubscriptionForm({ onSuccess, onError }) {
   const [email, setEmail] = useState('');
@@ -8,11 +8,11 @@ function SubscriptionForm({ onSuccess, onError }) {
     event.preventDefault();
     if (!email) return;
     try {
-      // const res = await axios.get('/articles', {
-      //   email,
-      // });
+      const res = await elysiaClient.subscribers.get('/articles', {
+        email,
+      });
 
-      // console.log(res);
+      console.log(res);
 
       if (onSuccess && typeof onSuccess === 'function') {
         onSuccess(email);

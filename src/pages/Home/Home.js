@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import TopPost from '../TopPost/TopPost';
@@ -7,6 +7,7 @@ import Subscription from '../../components/Subscription/Subscription';
 import TwoCoumnBanner from '../../components/TwoColumnBanner/TwoColumnBanner';
 import PrimaryCard from '../../components/Cards/PrimaryCard/PrimaryCard';
 import PlainBanner from '../../components/Banner/PlainBanner';
+import elysiaClient from '../../utils/elysiaClient';
 import classes from './Home.module.scss';
 import postImg_1 from '../../assets/images/5e220a63b9122.png';
 
@@ -58,6 +59,17 @@ const posts = [
 ];
 
 export default (props) => {
+  const [recentArticles, setRecentArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchRecentArticles = async () => {
+      const res = await elysiaClient.articles.getAll();
+      setRecentArticles(res.data.data.rows);
+    };
+
+    fetchRecentArticles();
+  }, [setRecentArticles]);
+
   return (
     <Fragment>
       <div className={classes.Home}>
@@ -81,7 +93,7 @@ export default (props) => {
         <section className="section__inner">
           <h4 className="headline mega">Recent articles</h4>
           <HScrollSlide>
-            {posts.map((post) => (
+            {recentArticles.map((post) => (
               <PrimaryCard
                 minWidth="250px"
                 title={post.title}

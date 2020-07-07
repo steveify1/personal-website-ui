@@ -1,12 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
+import elysiaClient from './utils/elysiaClient';
 import { Provider } from 'react-redux';
 import store from './store';
 import OutermostContainer from './components/OutermostContainer/OutermostContainer';
 import './App.css';
 
 axios.defaults.baseURL = 'http://localhost:5000/api/v1';
+elysiaClient.configure({
+  HTTPService: axios,
+});
 
 function App() {
   return (
