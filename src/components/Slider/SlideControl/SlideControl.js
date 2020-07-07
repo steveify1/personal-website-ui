@@ -53,11 +53,15 @@ export const useScrollControls = (options = {}) => {
 
 export const SlideControl = ({ direction, content, onClick, rounded }) => {
   return (
-    <div
-      className={`flex slide-control ${direction} ${rounded ? 'rounded' : ''}`}
-      onClick={onClick}
-    >
-      {content || direction === 'left' ? '<' : '>'}
+    <div className="hide-until-desktop">
+      <div
+        className={`flex slide-control ${direction} ${
+          rounded ? 'rounded' : ''
+        }`}
+        onClick={onClick}
+      >
+        {content || direction === 'left' ? '<' : '>'}
+      </div>
     </div>
   );
 };

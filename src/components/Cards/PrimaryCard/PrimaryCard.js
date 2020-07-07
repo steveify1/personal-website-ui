@@ -6,13 +6,22 @@ import articles from '../../../mockData/articles';
 
 const article1 = articles[1];
 
-function PrimaryCard({ image, title, body, date, author, minWidth, space }) {
+function PrimaryCard({
+  image,
+  title,
+  body,
+  date,
+  author,
+  minWidth,
+  maxWidth,
+  space,
+}) {
   return (
     <div
       data-test="primary-card"
       aria-label="card"
       className="card primary-card"
-      style={{ minWidth: minWidth, margin: space }}
+      style={{ minWidth: minWidth, maxWidth: maxWidth, margin: space }}
     >
       <section
         data-test="card__image"

@@ -4,8 +4,11 @@ import Banner from '../../components/Banner/Banner';
 import TopPost from '../TopPost/TopPost';
 import HScrollSlide from '../../components/HScrollSlide/HScrollSlide';
 import Subscription from '../../components/Subscription/Subscription';
-import TwoCoumnBanner from '../../components/TwoColumnBanner/TwoColumnBanner';
+import RecentFeed from '../../components/RecentFeed/RecentFeed';
+import PrayerFeed from '../../components/PrayerFeed/PrayerFeed';
+import SermonFeed from '../../components/SermonFeed/SermonFeed';
 import PrimaryCard from '../../components/Cards/PrimaryCard/PrimaryCard';
+import TwoCoumnBanner from '../../components/TwoColumnBanner/TwoColumnBanner';
 import PlainBanner from '../../components/Banner/PlainBanner';
 import elysiaClient from '../../utils/elysiaClient';
 import classes from './Home.module.scss';
@@ -59,17 +62,6 @@ const posts = [
 ];
 
 export default (props) => {
-  const [recentArticles, setRecentArticles] = useState([]);
-
-  useEffect(() => {
-    const fetchRecentArticles = async () => {
-      const res = await elysiaClient.articles.getAll();
-      setRecentArticles(res.data.data.rows);
-    };
-
-    fetchRecentArticles();
-  }, [setRecentArticles]);
-
   return (
     <Fragment>
       <div className={classes.Home}>
@@ -89,20 +81,7 @@ export default (props) => {
 
       <section class="categories section"></section>
 
-      <section class="categories section">
-        <section className="section__inner">
-          <h4 className="headline mega">Recent articles</h4>
-          <HScrollSlide>
-            {recentArticles.map((post) => (
-              <PrimaryCard
-                minWidth="250px"
-                title={post.title}
-                image={post.image}
-              />
-            ))}
-          </HScrollSlide>
-        </section>
-      </section>
+      <RecentFeed />
 
       <section class="categories section">
         <section className="section__inner">
@@ -147,25 +126,7 @@ export default (props) => {
         </section>
       </section>
 
-      <section class="categories section">
-        <section className="section__inner">
-          <div className="flex jc-space-between ai-center headline-bar">
-            <h4 className="headline mega">Prayers</h4>
-            <Link to="/explore/musings" className="link">
-              See all
-            </Link>
-          </div>
-          <HScrollSlide>
-            {posts.map((post) => (
-              <PrimaryCard
-                minWidth="250px"
-                title={post.title}
-                image={post.image}
-              />
-            ))}
-          </HScrollSlide>
-        </section>
-      </section>
+      <PrayerFeed />
 
       <PlainBanner>
         <section className="section subscription-section">
