@@ -41,7 +41,7 @@ function CategorizedHScrollFeed({ title, clientCallback, linkToSeeAll }) {
         <div className="flex jc-space-between ai-center headline-bar">
           <h4 className="headline mega">{title}</h4>
           {linkToSeeAll ? (
-            <Link to="/explore/musings" className="link">
+            <Link to={linkToSeeAll} className="link">
               See all
             </Link>
           ) : null}
@@ -51,6 +51,7 @@ function CategorizedHScrollFeed({ title, clientCallback, linkToSeeAll }) {
             <PrimaryCard
               minWidth="250px"
               maxWidth="250px"
+              url={row.slug}
               title={row.title}
               image={row.image}
             />

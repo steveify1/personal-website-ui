@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Banner from '../Banner/Banner';
 import ReadHeader from '../ReadHeader/ReadHeader';
+import Spinner from '../Spinner/Spinner';
 import './reader.scss';
 
 export default ({ article }) => {
@@ -29,6 +30,6 @@ export default ({ article }) => {
       </div>
     </Fragment>
   ) : (
-    <p>Fetching Data</p>
+    <Spinner />
   );
 };

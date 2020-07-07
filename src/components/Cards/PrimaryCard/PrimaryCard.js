@@ -9,6 +9,7 @@ const article1 = articles[1];
 function PrimaryCard({
   image,
   title,
+  url,
   body,
   date,
   author,
@@ -33,7 +34,7 @@ function PrimaryCard({
       </section>
 
       <section className="card__details">
-        <Link to={`/articles/man-untold-45677`}>
+        <Link to={`/articles/${url}`}>
           <h6 data-test="card__title" className="milli card__title">
             {title}
           </h6>

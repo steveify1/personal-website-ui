@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect, useReducer } from 'react';
+import elysiaClient from '../../utils/elysiaClient';
 import { withRouter } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setActiveRead, unsetActiveRead } from '../../store/activeRead';
@@ -12,7 +13,7 @@ import './reader.scss';
 const ArticleReader = (props) => {
   const { params, url } = props.match;
   // const dispatch = useDispatch();
-  // const activeRead = useSelector((state) => state.activeRead);
+  const activeRead = useSelector((state) => state.activeRead);
   const [article, setArticle] = useState(null);
   // const { setActive } = ActiveReadManager(activeRead);
 
@@ -20,10 +21,10 @@ const ArticleReader = (props) => {
   useEffect(() => {
     const fetchData = async (slug) => {
       // if (!activeRead.title) {
-      const res = articles.filter((article) => article.slug === slug)[0];
+      const res = await elysiaClient.articles.getOne(slug);
       if (res) {
-        setArticle(res);
-        console.log('Reading from file');
+        setArticle(res.data.data);
+        console.log(res);
       }
       // } else {
       //   console.log('Reading from redux');
@@ -44,7 +45,6 @@ const ArticleReader = (props) => {
     //   );
     // };
   }, [
-    article,
     params.slug,
     // activeRead,
     // activeRead.title,
@@ -68,8 +68,8 @@ const ArticleReader = (props) => {
       <div aria-label="article-reader" className="page article-reader">
         <section className="section">
           <section className="section__inner">
-            <div className="two-columns">
-              <section className="full-description column">
+            <div className="two-colums">
+              <section className="column">
                 <Reader article={article} />
               </section>
               <section className="column">
