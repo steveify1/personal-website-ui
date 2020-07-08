@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.error {
+  color: var(--pink);
+}
+
 // Makes a square or rectangle shape inot a circle or an oval
 .rounded--circle {
   @include BorderRadius(50%);

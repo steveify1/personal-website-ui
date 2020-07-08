@@ -1,0 +1,51 @@
+.comments__container {
+  max-width: 900px;
+  margin-top: 3em;
+}
+
+.comments,
+.comment {
+  margin: 1em 0;
+}
+
+.comment__container {
+  & > & {
+    margin-left: 2em;
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+  }
+}
+
+.comment {
+  background: var(--white);
+  padding: 0.5em;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+
+  .comment__form {
+    margin-top: 0.5em;
+  }
+}
+
+.comment__icon {
+  color: rgba(0, 0, 0, 0.6);
+  &:hover {
+    color: var(--primaryColor);
+    opacity: 1;
+  }
+}
+
+.comment__author {
+  margin-top: 0.5em;
+}
+
+.comment__form {
+  .form-control {
+    margin-bottom: 0.5em;
+  }
+
+  .btn {
+    font-size: 0.75rem;
+  }
+}

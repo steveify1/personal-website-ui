@@ -6,9 +6,11 @@ import { setActiveRead, unsetActiveRead } from '../../store/activeRead';
 import FaceCard from '../Cards/FaceCard/FaceCard';
 import ActiveReadManager from '../ActiveReadManager/ActiveReadManager';
 import Reader from '../Reader/Reader';
+import CommentContainer from '../CommentContainer/CommentContainer';
 import articles from '../../mockData/articles';
 import postImg_1 from '../../assets/images/36315119_1713324662085135_4126363613151625216_n.jpg';
 import './reader.scss';
+import Loader from '../Loader/Loader';
 
 const ArticleReader = (props) => {
   const { params, url } = props.match;
@@ -63,7 +65,7 @@ const ArticleReader = (props) => {
   const description =
     'Professor of Economics and Finance, and resident zonal pastor at RCCG, Bariga zone';
 
-  return (
+  return article ? (
     <Fragment>
       <div aria-label="article-reader" className="page article-reader">
         <section className="section">
@@ -81,10 +83,14 @@ const ArticleReader = (props) => {
                 /> */}
               </section>
             </div>
+            
+            <CommentContainer articleId={article.id} />
           </section>
         </section>
       </div>
     </Fragment>
+  ) : (
+    <Loader />
   );
 };
 

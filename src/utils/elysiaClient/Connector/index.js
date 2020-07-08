@@ -38,8 +38,8 @@ export default class APIConnector {
    * Fetches a list of data
    */
   async create(body, options = {}) {
-    return await this.HTTPService.get(
-      this.resource,
+    return await this.HTTPService.post(
+      options.url || this.resource,
       body,
       this.composeOptions(options)
     );
@@ -57,7 +57,10 @@ export default class APIConnector {
    */
   async getAll(options = { queryParams: {} }) {
     const url = this.composeUrl({ queryParams: options.queryParams });
-    return await this.HTTPService.get(url, this.composeOptions(options));
+    return await this.HTTPService.get(
+      options.url || url,
+      this.composeOptions(options)
+    );
   }
 
   /**

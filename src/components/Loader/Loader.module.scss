@@ -1,0 +1,26 @@
+.Loader {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  padding: 1.5rem;
+  .Spinner {
+    background-color: red;
+  }
+  .Brand {
+    text-transform: capitalize;
+  }
+}
+
+.LoaderContainer {
+  max-height: 30px;
+  overflow: hidden;
+}
+
+.LoaderMessage {
+  font-size: 0.875rem;
+}

@@ -8,6 +8,8 @@ import OutermostContainer from './components/OutermostContainer/OutermostContain
 import './App.css';
 
 axios.defaults.baseURL = 'http://localhost:5000/api/v1';
+axios.defaults.baseURL = 'https://agile-badlands-15160.herokuapp.com/api/v1';
+
 elysiaClient.configure({
   HTTPService: axios,
 });
