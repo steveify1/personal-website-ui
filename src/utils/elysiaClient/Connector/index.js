@@ -5,7 +5,8 @@ export default class APIConnector {
   constructor(HTTPService, resource) {
     this.HTTPService = HTTPService || axios;
     this.resource = resource;
-    this.baseUrl = 'http://localhost:5000/api/v1';
+    // this.baseUrl = 'http://localhost:5000/api/v1';
+    this.baseUrl = 'https://agile-badlands-15160.herokuapp.com/api/v1';
     this.default = {
       options: {
         // withCredentials: true,

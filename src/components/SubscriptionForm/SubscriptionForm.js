@@ -1,17 +1,16 @@
 import React, { useState, Fragment } from 'react';
 import elysiaClient from '../../utils/elysiaClient';
+import useForm from '../../hooks/useForm';
 
 function SubscriptionForm({ onSuccess, onError }) {
   const [email, setEmail] = useState('');
 
   const subscribe = async (event) => {
-    event.preventDefault();
     if (!email) return;
     try {
-      const res = await elysiaClient.subscribers.get('/articles', {
-        email,
-      });
+      const res = await elysiaClient.subscribers.subscribe({ email });
 
+      if (!res) return;
       console.log(res);
 
       if (onSuccess && typeof onSuccess === 'function') {
@@ -23,9 +22,11 @@ function SubscriptionForm({ onSuccess, onError }) {
     }
   };
 
+  const { isProcessing, handleSubmit, FormButton } = useForm(subscribe);
+
   return (
     <Fragment>
-      <form className="form subscription-form" onSubmit={subscribe}>
+      <form className="form subscription-form" onSubmit={handleSubmit}>
         <div className="form-group flex-column">
           <input
             className="form-control"
@@ -34,9 +35,12 @@ function SubscriptionForm({ onSuccess, onError }) {
             value={email}
             onChange={({ currentTarget: { value } }) => setEmail(value)}
           />
-          <button className="btn btn-secondary  btn-shadow btn-md">
+          <FormButton
+            isProcessing={isProcessing}
+            className="btn btn-secondary  btn-shadow btn-md"
+          >
             Subscribe
-          </button>
+          </FormButton>
         </div>
       </form>
     </Fragment>

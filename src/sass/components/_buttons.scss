@@ -1,4 +1,9 @@
 // ******* BUTTONS *********
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
 .btn-group {
   a.btn,
   .btn {
