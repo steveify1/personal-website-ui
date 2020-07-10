@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import elysiaClient from '../../utils/elysiaClient';
+import useForm from '../../hooks/useForm';
 
 function CommentForm({ onSubmit, sourceId, parentId }) {
   const commentator = JSON.parse(localStorage.getItem('commentator')) || {};
@@ -49,10 +50,12 @@ function CommentForm({ onSubmit, sourceId, parentId }) {
     clearForm();
   };
 
+  const { isProcessing, handleSubmit, FormButton } = useForm(submitComment);
+
   return (
     <div className="comment__form">
       {error ? <p className="mini error">{error}</p> : null}
-      <form ref={formRef} className="form" onSubmit={submitComment}>
+      <form ref={formRef} className="form" onSubmit={handleSubmit}>
         <div className="flex flex-column">
           {!commentator.fullName ? (
             <input
@@ -97,7 +100,12 @@ function CommentForm({ onSubmit, sourceId, parentId }) {
             </label>
           </div>
         ) : null}
-        <button className="btn milli btn-sm btn-primary">comment</button>
+        <FormButton
+          isProcessing={isProcessing}
+          className="btn milli btn-sm btn-primary"
+        >
+          comment
+        </FormButton>
       </form>
     </div>
   );

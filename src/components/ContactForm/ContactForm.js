@@ -36,7 +36,9 @@ function ContactForm({ onSuccess }) {
   return (
     <div className="contact__form">
       <form className="form" onSubmit={handleSubmit}>
-        <h4 className="headline">Reach out to me</h4>
+        {/* <h5 className="headline">Contact</h5> */}
+        <p>Need to talk? Kindly leave a message. </p>
+        <br />
         <p className="error mini">{error}</p>
         <div className="form-group">
           <input

@@ -14,7 +14,7 @@ function RecentFeed() {
           },
         })
       }
-      linkToSeeAll="/search?q=prayer"
+      // linkToSeeAll="/search?q=prayer"
     />
   );
 }

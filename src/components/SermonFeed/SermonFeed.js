@@ -14,7 +14,7 @@ function SermonFeed() {
           },
         })
       }
-      linkToSeeAll="/search?q=sermon"
+      // linkToSeeAll="/search?q=sermon"
     />
   );
 }
