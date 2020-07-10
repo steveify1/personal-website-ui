@@ -14,36 +14,34 @@ function CategorizedHScrollFeed({ title, clientCallback, linkToSeeAll }) {
     fetchRecentArticles();
   }, [clientCallback]);
 
-  //   <section class="categories section">
-  //   <section className="section__inner">
-  //     <div className="flex jc-space-between ai-center headline-bar">
-  //       <h4 className="headline mega">Prayers</h4>
-  //       <Link to="/explore/musings" className="link">
-  //         See all
-  //       </Link>
-  //     </div>
-  //     <HScrollSlide>
-  //       {posts.map((post) => (
-  //         <PrimaryCard
-  //           minWidth="250px"
-  //           maxWidth="250px"
-  //           title={post.title}
-  //           image={post.image}
-  //         />
-  //       ))}
-  //     </HScrollSlide>
-  //   </section>
-  // </section>
-
   return data.length ? (
     <section class="categories section">
       <section className="section__inner">
         <div className="flex jc-space-between ai-center headline-bar">
-          <h4 className="headline mega">{title}</h4>
+          <h4
+            style={{
+              alignSelf: 'center',
+              marginleft: '20px',
+              display: 'block',
+            }}
+            className="headline mega"
+          >
+            {title}
+          </h4>
           {linkToSeeAll ? (
-            <Link to={linkToSeeAll} className="link">
-              See all
-            </Link>
+            <div>
+              <Link
+                style={{
+                  alignSelf: 'center',
+                  marginleft: '20px',
+                  display: 'block',
+                }}
+                to={linkToSeeAll}
+                className="link"
+              >
+                See all
+              </Link>
+            </div>
           ) : null}
         </div>
         <HScrollSlide>

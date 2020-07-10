@@ -1,0 +1,15 @@
+$primaryGradient: var(--primaryGradient);
+
+.contact {
+  margin-bottom: 6em;
+  &__container {
+    background-color: var(--white);
+    @include BoxShadow(0, 7px, 8px, rgba(0, 0, 0, 0.1));
+    @include BorderRadius(7px);
+  }
+
+  &__socials {
+    background: $primaryGradient;
+    height: 100%;
+  }
+}

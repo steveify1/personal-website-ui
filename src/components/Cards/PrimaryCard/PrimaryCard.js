@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ReadHeader from '../../ReadHeader/ReadHeader';
 import articles from '../../../mockData/articles';
+import postImg_2 from '../../../assets/images/5e220a63b9122.png';
 
 const article1 = articles[1];
 
@@ -29,7 +30,7 @@ function PrimaryCard({
         className="card__image rounded rounded--circle"
       >
         <div className="image-wrapper">
-          <img src={image || ''} alt="post-avatar" />
+          <img src={image || postImg_2} alt="post-avatar" />
         </div>
       </section>
 

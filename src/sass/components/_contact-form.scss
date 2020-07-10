@@ -1,0 +1,15 @@
+.contact__form {
+  background-color: var(--white);
+  max-width: 700px;
+  padding: 2em 1em;
+
+  .form-control {
+    width: 100%;
+  }
+
+  textarea {
+    height: 120px;
+    min-width: 100%;
+    min-height: 80px;
+  }
+}

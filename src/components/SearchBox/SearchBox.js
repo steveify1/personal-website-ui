@@ -35,7 +35,7 @@ function SearchBox({ className, history, location }) {
               value={query}
               onChange={({ currentTarget: { value } }) => setQuery(value)}
             />
-            <button className="btn btn-primary flex ai-center  btn-shadow btn-md">
+            <button className="btn search__btn btn-primary flex ai-center  btn-shadow btn-md show-until-tablet">
               <IoIosSearch className="icon" />
             </button>
           </div>

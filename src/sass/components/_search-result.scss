@@ -3,11 +3,10 @@
   max-width: 700px;
 
   .result {
+    background-color: var(--white);
+    @include BoxShadow(0, 7px, 10px, rgba(0, 0, 0, 0.15));
+    @include BorderRadius(4px);
     margin-bottom: 2em;
-    padding: 0.5em 0;
-
-    &:not(:last-child) {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    }
+    padding: 1em;
   }
 }

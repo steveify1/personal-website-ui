@@ -3,7 +3,7 @@ import { Spinner } from '../components/Loader/Loader';
 
 const FormButton = ({ isProcessing, children, ...rest }) => {
   const content = isProcessing ? (
-    <span className="flex ai-center">
+    <span className="flex ai-center jc-center">
       <Spinner size="15px" />{' '}
       <span style={{ marginLeft: '0.5em' }}>{children}</span>
     </span>

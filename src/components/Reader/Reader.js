@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Banner from '../Banner/Banner';
 import ReadHeader from '../ReadHeader/ReadHeader';
 import Loader from '../Loader/Loader';
+import postImg_2 from '../../assets/images/5e220a63b9122.png';
 import './reader.scss';
 
 export default ({ article }) => {
@@ -16,7 +17,7 @@ export default ({ article }) => {
           <ReadHeader author={article.author} publishDate={article.createdAt} />
         </div>
 
-        <Banner img={article.img_url} maxHeight="250px" />
+        <Banner img={article.img_url || postImg_2} maxHeight="250px" />
 
         {article.highlight ? (
           <blockquote className="milli blockquote article__highlight">

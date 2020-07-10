@@ -5,6 +5,7 @@ import SearchResult from '../../components/SearchResult/SearchResult';
 import { setClearSearchForm } from '../../store/search';
 import Spinner from '../../components/Spinner/Spinner';
 import articles from '../../mockData/articles';
+import elysiaClient from '../../utils/elysiaClient';
 
 function Search(props) {
   let {
@@ -16,16 +17,8 @@ function Search(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      setResult(
-        articles.filter((article) => {
-          return (
-            article.title.includes(query) ||
-            article.highlight.includes(query) ||
-            article.tags.includes(query) ||
-            article.body.includes(query)
-          );
-        })
-      );
+      const res = await elysiaClient.search.getAll(query);
+      setResult(res.data.data.rows);
     };
     fetchData();
     // return () => dispatch(setClearSearchForm(true));

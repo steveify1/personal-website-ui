@@ -11,10 +11,11 @@
 
 .h-scroll-slider {
   overflow-x: auto;
+  // grid-template-columns: repeat(autofit, minmax(100px, 1fr));
 
   &__child {
-    width: 100%;
-    display: inline-block;
+    width: fit-content;
+    // display: inline-block;
     &:not(:last-child) {
       margin-right: 0.5em;
     }

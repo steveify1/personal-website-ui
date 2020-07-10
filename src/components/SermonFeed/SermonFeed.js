@@ -6,8 +6,15 @@ function SermonFeed() {
   return (
     <CategorizedHScrollFeed
       title="Sermons"
-      clientCallback={async () => await elysiaClient.articles.getAll()}
-      linkToSeeAll="/search?category=sermon"
+      clientCallback={async () =>
+        await elysiaClient.articles.getAll({
+          queryParams: {
+            category: 'sermon',
+            limit: 5,
+          },
+        })
+      }
+      linkToSeeAll="/search?q=sermon"
     />
   );
 }

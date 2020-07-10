@@ -6,8 +6,15 @@ function RecentFeed() {
   return (
     <CategorizedHScrollFeed
       title="Prayers"
-      clientCallback={async () => await elysiaClient.articles.getAll()}
-      linkToSeeAll="/search?category=prayer"
+      clientCallback={async () =>
+        await elysiaClient.articles.getAll({
+          queryParams: {
+            category: 'prayer',
+            limit: 5,
+          },
+        })
+      }
+      linkToSeeAll="/search?q=prayer"
     />
   );
 }

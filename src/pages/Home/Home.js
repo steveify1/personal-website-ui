@@ -106,27 +106,8 @@ export default (props) => {
         </section>
       </section>
 
-      <section class="categories section">
-        <section className="section__inner">
-          <div className="flex jc-space-between ai-center headline-bar">
-            <h4 className="headline mega">Sermons</h4>
-            <Link to="/explore/musings" className="link">
-              See all
-            </Link>
-          </div>
-          <HScrollSlide>
-            {posts.map((post) => (
-              <PrimaryCard
-                minWidth="250px"
-                title={post.title}
-                image={post.image}
-              />
-            ))}
-          </HScrollSlide>
-        </section>
-      </section>
-
       <PrayerFeed />
+      <SermonFeed />
 
       <PlainBanner>
         <section className="section subscription-section">

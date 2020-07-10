@@ -6,7 +6,13 @@ function RecentFeed() {
   return (
     <CategorizedHScrollFeed
       title="Recent Articles"
-      clientCallback={async () => await elysiaClient.articles.getAll()}
+      clientCallback={async () =>
+        await elysiaClient.articles.getAll({
+          queryParams: {
+            limit: 5,
+          },
+        })
+      }
     />
   );
 }
