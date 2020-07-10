@@ -16,7 +16,7 @@ $primaryGradient: var(--primaryGradient);
   &__socials {
     background: $primaryGradient;
     height: 100%;
-    padding: 3.5em;
+    padding: 3em;
 
     &__wrapper {
       padding: 1em;
@@ -25,17 +25,19 @@ $primaryGradient: var(--primaryGradient);
       height: 100%;
       width: 100%;
       background-color: var(--white);
+
+      .headline {
+        color: var(--primaryColor);
+      }
     }
 
     .social {
       margin-bottom: 1em;
       .icon {
-        margin-bottom: 0;
-        align-self: baseline;
       }
-      span {
+      p,
+      a {
         margin-left: 0.5em;
-        align-self: baseline;
       }
     }
   }

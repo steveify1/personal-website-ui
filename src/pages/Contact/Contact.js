@@ -1,44 +1,7 @@
-import React, { useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import ContactSuccess from '../../components/ContactSuccess/ContactSuccess';
 import ContactForm from '../../components/ContactForm/ContactForm';
-import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoLinkedin,
-  IoLogoInstagram,
-  IoIosMail,
-  IoIosPhonePortrait,
-} from 'react-icons/io';
-
-const socialIcons = {
-  facebook: <IoLogoFacebook />,
-  twitter: <IoLogoTwitter />,
-  linkedin: <IoLogoLinkedin />,
-  instagram: <IoLogoInstagram />,
-};
-
-const renderSocialAccounts = (socials) => {
-  return (
-    <Fragment>
-      {Object.keys(socials).map((account) => {
-        if (socials[account]) {
-          return (
-            <Link
-              className={`social icon ${account}`}
-              to={`${socials[account]}`}
-              title={account}
-              target="_blank"
-            >
-              {socialIcons[account]}
-            </Link>
-          );
-        }
-        return null;
-      })}
-    </Fragment>
-  );
-};
+import ContactSocial from '../../components/ContactSocial/ContactSocial';
 
 function Contact() {
   const [showModal, setShowModal] = useState(false);
@@ -54,54 +17,7 @@ function Contact() {
       <section className="section">
         <section className="section__inner">
           <div className="contact__container grid">
-            <div className="contact__socials flex ai-center jc-center">
-              <div className="contact__socials__wrapper">
-                <h3 className="headline">Gbola Sokoya</h3>
-                <p>Stay updated! Follow me on:</p>
-                <ul className="socials">
-                  <li className="social flex ai-center">
-                    <IoLogoFacebook className="icon social__icon facebook" />
-                    <span>Facebook</span>
-                  </li>
-                </ul>
-                <ul className="socials">
-                  <li className="social">
-                    <IoLogoTwitter className="icon social__icon twitter" />
-                    <span>Twitter</span>
-                  </li>
-                </ul>
-                <ul className="socials">
-                  <li className="social">
-                    <IoLogoInstagram className="icon social__icon instagram" />
-                    <span>Instagram</span>
-                  </li>
-                </ul>
-                <ul className="socials">
-                  <li className="social">
-                    <IoLogoLinkedin className="icon social__icon linkedin" />
-                    <span>Facebook</span>
-                  </li>
-                </ul>
-
-                <hr />
-
-                <br />
-                <p>You can reach out directly via:</p>
-                <br />
-                <ul className="socials">
-                  <li className="social flex ai-center">
-                    <IoIosMail className="icon social__icon facebook" />
-                    <Link className="link">gbolasokoya@mail.com</Link>
-                  </li>
-                </ul>
-                <ul className="socials">
-                  <li className="social">
-                    <IoIosPhonePortrait className="icon social__icon twitter" />
-                    <span>07012345678</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <ContactSocial onSuccess={() => setShowModal(true)} />
             <ContactForm onSuccess={() => setShowModal(true)} />
           </div>
         </section>

@@ -18,7 +18,7 @@ export const Scaler = (props) => {
 
 const Loader = ({ brand, message }) => {
   return (
-    <div className={`${classes.Loader} ai-center jc-center`}>
+    <div className={` flex ai-center jc-center`} style={{ height: '80vh' }}>
       <div className={classes.LoaderContainer} data-test="LoaderContainer">
         {brand ? (
           <h3 className="brand" data-test="brand">

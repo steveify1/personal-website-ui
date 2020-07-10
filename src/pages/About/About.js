@@ -5,10 +5,10 @@ import './about.scss';
 
 export default (props) => {
   const social = {
-    facebook: 'https://www/facebook.com/gbola-sokoya',
-    twitter: 'https://www/twitter.com/gbola-sokoya',
-    instagram: 'https://www/instagram.com/gbola-sokoya',
-    linkedin: 'https://www/linkedin.com/gbola-sokoya',
+    facebook: 'https://www.facebook.com/gbola-sokoya',
+    twitter: 'https://www.twitter.com/gbola-sokoya',
+    instagram: 'https://www.instagram.com/gbola-sokoya',
+    linkedin: 'https://www.linkedin.com/gbola-sokoya',
   };
 
   const description =

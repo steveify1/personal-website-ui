@@ -22,14 +22,15 @@ function FaceCard({ image, name, description, social = {} }) {
         {Object.keys(social).map((account) => {
           if (social[account]) {
             return (
-              <Link
+              <a
                 className={`social card__icon icon ${account}`}
-                to={`${social[account]}`}
+                href={`${social[account]}`}
                 title={account}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {socialIcons[account]}
-              </Link>
+              </a>
             );
           }
           return null;
@@ -57,9 +58,9 @@ function FaceCard({ image, name, description, social = {} }) {
         >
           {name}
         </h3>
-        {/* <div aria-label="icons" className="card__icons icons flex jc-even">
+        <div aria-label="icons" className="card__icons icons flex jc-even">
           {renderSocialMedia()}
-        </div> */}
+        </div>
         <p className="user__description milli">{description}</p>
         {/* <section className="flex jc-center ai-center">
           <button className="btn btn-primary btn-sm shadow btn-full-width">

@@ -26,6 +26,7 @@ function ContactForm({ onSuccess }) {
     const { first_name, last_name, email, message } = state;
     if (first_name && last_name && email && message) {
       runOnSuccess({ done: true });
+      setState(initialFormState);
     } else {
       setError('All fields are required.');
     }
