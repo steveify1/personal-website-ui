@@ -58,28 +58,29 @@ function Contact() {
               <div className="contact__socials__wrapper">
                 <h3 className="headline">Gbola Sokoya</h3>
                 <p>Stay updated! Follow me on:</p>
+                <br />
                 <ul className="socials">
                   <li className="social flex ai-center">
                     <IoLogoFacebook className="icon social__icon facebook" />
-                    <span>Facebook</span>
+                    <p>Facebook</p>
                   </li>
                 </ul>
                 <ul className="socials">
-                  <li className="social">
+                  <li className="social flex">
                     <IoLogoTwitter className="icon social__icon twitter" />
-                    <span>Twitter</span>
+                    <p>Twitter</p>
                   </li>
                 </ul>
                 <ul className="socials">
-                  <li className="social">
+                  <li className="social flex">
                     <IoLogoInstagram className="icon social__icon instagram" />
-                    <span>Instagram</span>
+                    <p>Instagram</p>
                   </li>
                 </ul>
                 <ul className="socials">
-                  <li className="social">
+                  <li className="social flex">
                     <IoLogoLinkedin className="icon social__icon linkedin" />
-                    <span>Facebook</span>
+                    <p>Facebook</p>
                   </li>
                 </ul>
 
@@ -90,14 +91,14 @@ function Contact() {
                 <br />
                 <ul className="socials">
                   <li className="social flex ai-center">
-                    <IoIosMail className="icon social__icon facebook" />
+                    <IoIosMail className="icon social__icon mail" />
                     <Link className="link">gbolasokoya@mail.com</Link>
                   </li>
                 </ul>
                 <ul className="socials">
-                  <li className="social">
-                    <IoIosPhonePortrait className="icon social__icon twitter" />
-                    <span>07012345678</span>
+                  <li className="social flex">
+                    <IoIosPhonePortrait className="icon social__ico twitter" />
+                    <p>07012345678</p>
                   </li>
                 </ul>
               </div>

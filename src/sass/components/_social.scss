@@ -1,18 +1,29 @@
 .social {
   margin: 0 0.5em;
 
-  &:hover {
-    &.facebook {
-      color: blue;
-    }
-    &.twitter {
-      color: rgb(0, 140, 255);
-    }
-    &.instagram {
-      color: rgb(218, 2, 38);
-    }
-    &.linkedin {
-      color: rgb(33, 50, 197);
-    }
+  &.facebook {
+    color: blue;
   }
+  &.twitter {
+    color: rgb(0, 140, 255);
+  }
+  &.instagram {
+    color: rgb(218, 2, 38);
+  }
+  &.linkedin {
+    color: rgb(33, 50, 197);
+  }
+}
+
+.facebook {
+  color: blue;
+}
+.twitter {
+  color: rgb(0, 140, 255);
+}
+.instagram {
+  color: rgb(218, 2, 38);
+}
+.linkedin {
+  color: rgb(33, 50, 197);
 }
