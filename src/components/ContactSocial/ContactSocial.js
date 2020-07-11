@@ -69,7 +69,7 @@ function ContactSocial({ author }) {
         <ul className="socials">
           <li className="social flex ai-center">
             <IoIosMail className="icon social__icon mail" />
-            <a href={`mail-to: ${contactInfo.email}`} className="link">
+            <a href={`mailto: ${contactInfo.email}`} className="link">
               gbolasokoya@mail.com
             </a>
           </li>

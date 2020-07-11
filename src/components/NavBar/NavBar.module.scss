@@ -5,6 +5,7 @@
   height: 100%;
   width: 100%;
   padding: 0 1em;
+  @include BoxShadow(0, 3px, 10px, rgba(0, 0, 0, 0.07));
 
   @media screen and (min-width: 576px) {
     padding: 0 $globalHSpace;

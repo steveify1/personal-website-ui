@@ -25,7 +25,7 @@ function SearchBox({ className, history, location }) {
 
   return (
     <div className={`search-box ${className}`}>
-      <form className="form search__form" onSubmit={sendQuery}>
+      <form className="search-form" onSubmit={sendQuery}>
         <div className="form-group" style={{ margin: '0' }}>
           <div className="input-group input-group">
             <input
@@ -35,7 +35,7 @@ function SearchBox({ className, history, location }) {
               value={query}
               onChange={({ currentTarget: { value } }) => setQuery(value)}
             />
-            <button className="btn search__btn flex ai-center  btn-shadow btn-md show-until-tablet">
+            <button className="btn search__btn btn-primary flex ai-center  btn-shadow btn-md show-until-tablet">
               <IoIosSearch className="icon" />
             </button>
           </div>

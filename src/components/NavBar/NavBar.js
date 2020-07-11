@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { IoIosList } from 'react-icons/io';
-import { IoIosClose } from 'react-icons/io';
-import SearchBox from '../SearchBox/SearchBox';
+import { IoIosList, IoIosClose, IoIosSearch } from 'react-icons/io';
+import SearchController from '../SearchController/SearchController';
 import classes from './NavBar.module.scss';
 
 const mainMenuItems = [
@@ -59,12 +58,13 @@ export default (props) => {
           </NavLink>
         </div>
 
-        <SearchBox className="hide-until-tablet" />
-
-        <IoIosList
-          onClick={() => setShowMenu(true)}
-          className="icon show-until-tablet"
-        />
+        <div className="nav__icons flex ai-center jc-flex-end">
+          <SearchController />
+          <IoIosList
+            onClick={() => setShowMenu(true)}
+            className="icon show-until-tablet"
+          />
+        </div>
 
         {makeNavMenu(mainMenuItems)}
       </nav>

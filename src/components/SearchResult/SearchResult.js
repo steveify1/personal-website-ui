@@ -23,7 +23,7 @@ function SearchResult({ result }) {
 
   if (result.length) {
     return (
-      <div aria-label="search page" className="search-result">
+      <div aria-label="search result" className="search__result">
         {renderResult()}
       </div>
     );
@@ -31,10 +31,10 @@ function SearchResult({ result }) {
 
   return (
     <div className="ta-center empty-search">
-      <h3>
+      <h6>
         We could not find what you are looking for. Please try using a different
         keyword
-      </h3>
+      </h6>
       <div className="illustration empty-search__icon flex jc-center ai-center">
         <span>4</span>
         <IoMdSearch className="icon" />

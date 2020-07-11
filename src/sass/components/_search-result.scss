@@ -1,6 +1,11 @@
-.search-result {
+.search__result {
   width: 100%;
   max-width: 700px;
+  margin: 1em 0;
+
+  .result__header {
+    margin: 2em 0;
+  }
 
   .result {
     background-color: var(--white);
