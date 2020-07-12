@@ -3,11 +3,10 @@ import { withRouter } from 'react-router-dom';
 import { IoIosClose, IoIosSearch } from 'react-icons/io';
 import SearchBox from '../SearchBox/SearchBox';
 
-function SearchController({ history }) {
-  console.log(history);
+function SearchWrapper() {
   const [expand, setExpand] = useState(false);
 
-  return history.location.pathname.startsWith('/search') ? null : (
+  return (
     <div
       className={`search__controller flex ai-center ${
         expand ? 'search__controller--expand' : ''
@@ -28,6 +27,15 @@ function SearchController({ history }) {
         )}
       </div>
     </div>
+  );
+}
+
+function SearchController({ history }) {
+  console.log(history);
+  const [expand, setExpand] = useState(false);
+
+  return history.location.pathname.startsWith('/search') ? null : (
+    <SearchWrapper />
   );
 }
 
