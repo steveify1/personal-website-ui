@@ -5,6 +5,7 @@ import About from '../pages/About/About';
 import Search from '../pages/Search/Search';
 import ArticleReader from '../components/ArticleReader/ArticleReader';
 import Contact from '../pages/Contact/Contact';
+import POR from '../pages/POR/POR';
 
 export default () => {
   return (
@@ -15,6 +16,7 @@ export default () => {
         <Route path="/contact" component={Contact} exact />
         <Route path="/articles/:slug" component={ArticleReader} exact />
         <Route path="/search" component={Search} exact />
+        <Route path="/preachers-of-righteousness" component={POR} exact />
       </Switch>
     </Fragment>
   );
