@@ -4,6 +4,8 @@ import Banner from '../../components/Banner/Banner';
 import TopPost from '../TopPost/TopPost';
 import HScrollSlide from '../../components/HScrollSlide/HScrollSlide';
 import Subscription from '../../components/Subscription/Subscription';
+import SearchController from '../../components/SearchController/SearchController';
+import SearchBox from '../../components/SearchBox/SearchBox';
 import RecentFeed from '../../components/RecentFeed/RecentFeed';
 import PrayerFeed from '../../components/PrayerFeed/PrayerFeed';
 import SermonFeed from '../../components/SermonFeed/SermonFeed';
@@ -11,7 +13,7 @@ import PrimaryCard from '../../components/Cards/PrimaryCard/PrimaryCard';
 import TwoCoumnBanner from '../../components/TwoColumnBanner/TwoColumnBanner';
 import PlainBanner from '../../components/Banner/PlainBanner';
 import elysiaClient from '../../utils/elysiaClient';
-import classes from './Home.module.scss';
+import classes from './Home.scss';
 import postImg_1 from '../../assets/images/5e220a63b9122.png';
 
 const posts = [
@@ -64,7 +66,7 @@ const posts = [
 export default (props) => {
   return (
     <Fragment>
-      <div className={classes.Home}>
+      <div className='home-page'>
         <Banner height="900px" maxHeight="50vh">
           <div>
             <h1 className="headline headline-2">
@@ -78,8 +80,13 @@ export default (props) => {
       <div>
         <TopPost />
       </div>
-
-      <section class="categories section"></section>
+      
+      
+    <div className='home-page__search flex jc-flex-end'>
+          <SearchBox />
+      </div>
+      
+      
 
       <RecentFeed />
 

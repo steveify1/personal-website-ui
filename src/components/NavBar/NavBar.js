@@ -57,12 +57,11 @@ export default (props) => {
       <nav className={classes.NavBar}>
         <div className="brand logo">
           <NavLink to="/">
-            <h5>Gbola Sokoya</h5>
+            <h3>Gbola Sokoya</h3>
           </NavLink>
         </div>
 
         <div className="nav__icons flex ai-center jc-flex-end">
-          <SearchController />
           <IoIosList
             onClick={() => setShowMenu(true)}
             className="icon show-until-tablet"
