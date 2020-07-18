@@ -7,6 +7,9 @@ import classes from './NavBar.module.scss';
 const mainMenuItems = [
   { displayName: 'home', href: '/' },
   // { displayName: 'explore', href: '/explore', subMenu: [{}] },
+  { displayName: 'JJC', href: '/jjc' },
+  { displayName: 'POR', href: '/preachers-of-righteousness' },
+  { displayName: 'voice of god', href: '/voice-of-god' },
   { displayName: 'about', href: '/about' },
   { displayName: 'contact', href: '/contact' },
 ];

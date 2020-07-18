@@ -31,9 +31,9 @@ function Search(props) {
     <div aria-label="search page" className="pag search-page">
       <section className="section">
         <section className="section__inner">
+          <SearchBox className="show-until-" />
           {result ? (
             <Fragment>
-              <SearchBox className="show-until-" />
               {result.count ? (
                 <SearchHeader count={result.count} query={query} />
               ) : null}

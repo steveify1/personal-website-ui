@@ -1,5 +1,5 @@
 .banner {
-  min-height: 300px;
+  min-height: 150px;
   position: relative;
 }
 
@@ -49,7 +49,7 @@
 .plain-banner {
   width: 100%;
   &.primary {
-    background-color: var(--primaryColor);
+    background: var(--primaryGradient);
     color: var(--white);
   }
 }
