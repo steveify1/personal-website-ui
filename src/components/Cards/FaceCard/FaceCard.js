@@ -51,11 +51,8 @@ function FaceCard({ image, name, description, social = {} }) {
         </div>
       </section>
 
-      <section className="card__details">
-        <h3
-          data-test="user__name"
-          className="mega card__title ta-center user__name"
-        >
+      <section className="card__details ta-center">
+        <h3 data-test="user__name" className="mega card__title user__name">
           {name}
         </h3>
         <div aria-label="icons" className="card__icons icons flex jc-even">

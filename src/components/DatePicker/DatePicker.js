@@ -1,37 +1,32 @@
 import React, { useState } from 'react';
+import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
-const attachZero = (value) => (value.length === 1 ? `0${value}` : value);
+function DatePicker({ disabled, onPicked, className }) {
+  const [date, setDate] = useState(new Date());
 
-const currentDate = new Date();
-const year = `${currentDate.getFullYear()}`;
-const month = `${currentDate.getMonth() + 1}`;
-const day = `${currentDate.getDate()}`;
-
-export const today = `${year}-${attachZero(month)}-${attachZero(day)}`;
-
-function DatePicker({ disabled, onPicked }) {
-  const [date, setDate] = useState(today);
-
-  const runOnPicked = () => {
+  const runOnPicked = (date) => {
     if (onPicked && typeof onPicked === 'function') {
       onPicked(date);
     }
   };
 
-  const handleChange = ({ currentTarget: { value } }) => {
-    setDate(value);
-    runOnPicked();
+  const handleChange = async (value) => {
+    await setDate(value);
+    runOnPicked(value);
   };
 
   return (
-    <div className="date-picker">
-      <div className="date-picker__wrapper">
-        <input
-          className="form-control"
-          type="date"
-          defaultValue={date}
+    <div className={`date-picker ${className ? className : ''}`}>
+      <div className="date-picker__wrapper flex jc-center">
+        <ReactDatePicker
+          selected={date}
+          showYearDropdown
+          showMonthDropdown
           disabled={disabled}
           onChange={handleChange}
+          placeholderText="mm/dd/yyyy"
+            inline
         />
       </div>
     </div>
