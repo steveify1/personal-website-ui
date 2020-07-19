@@ -1,9 +1,13 @@
 .date-picker {
   background-color: var(--white);
   padding: 1em;
-    max-width: 100%;
-    overflow: hidden;
+  max-width: 100%;
+  overflow: hidden;
 
-   @include BoxShadow(0px, 8px, 9px, rgba(0, 0, 0, 0.08));
-   @include BorderRadius(10px);
+  @media screen and (max-width: 990px) {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
 }

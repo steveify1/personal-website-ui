@@ -1,16 +1,14 @@
 .content-by-date {
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 991px) {
     grid-template-columns: 3fr 9fr 0fr;
   }
-    
-    
-    
-    .calendar {
-        background-color: var(--white);
-            padding: 1em;
-        
-        &__toggler {
-            color:  var(--primaryColor);
-        }
+
+  .calendar {
+    background-color: var(--white);
+    padding: 1em;
+
+    &__toggler {
+      color: var(--primaryColor);
     }
+  }
 }

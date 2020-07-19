@@ -26,7 +26,7 @@ function DatePicker({ disabled, onPicked, className }) {
           disabled={disabled}
           onChange={handleChange}
           placeholderText="mm/dd/yyyy"
-            inline
+          inline
         />
       </div>
     </div>

@@ -1,23 +1,28 @@
 @import '../../sass/modules.scss';
 
 .home-page {
-    .plain-banner {
-        height: 600px;
+  .plain-banner {
+    height: 600px;
+  }
+
+  &__search {
+    padding: 1em 1em 2em;
+    justify-content: flex-end;
+
+    @media screen and (min-width: 768px) {
+      padding: 1em $globalHSpace 2em;
     }
-    
-    &__search {
-        padding: 1em $globalHSpace 2em;
-        justify-content: flex-end;
-//        width: fit-content;
-        
-        .search-box {
-//            background-color: red;
-            display: block;
-            .input-group {
-                
-            float: right;
-//        justify-content: flex-end;
-            }
-        }
+
+    .search-box {
+      padding: 0;
+      @extend .flex;
+      justify-content: flex-end;
+
+      .search__form {
+        display: block !important;
+        width: 100%;
+        max-width: 500px;
+      }
     }
+  }
 }
