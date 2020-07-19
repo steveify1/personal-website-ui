@@ -40,8 +40,6 @@ function PrimaryCard({
             {title}
           </h6>
         </Link>
-
-        <ReadHeader author={article1.author} publishDate={article1.createdAt} />
       </section>
     </div>
   );

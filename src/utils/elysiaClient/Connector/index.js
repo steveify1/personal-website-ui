@@ -1,6 +1,6 @@
 import axios from 'axios';
 import queryString from 'query-string';
-import Cache from './cache';
+import Cache from '../Cache/cache';
 
 export default class APIConnector {
   constructor(HTTPService, resource) {

@@ -48,7 +48,7 @@ function CategorizedHScrollFeed({ title, clientCallback, linkToSeeAll }) {
           {data.map((row) => (
             <PrimaryCard
               // minWidth="250px"
-              maxWidth="250px"
+              // maxWidth="250px"
               url={row.slug}
               title={row.title}
               image={row.image}

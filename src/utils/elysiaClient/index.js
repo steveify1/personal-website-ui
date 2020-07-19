@@ -2,6 +2,7 @@ import Articles from './Articles';
 import Subscribers from './Subscribers';
 import Comment from './Comment';
 import Search from './Search';
+import Category from './Category';
 
 class APIComposition {
   constructor() {
@@ -15,6 +16,7 @@ class APIComposition {
     this.subscribers = new Subscribers(this.HTTPService);
     this.comment = new Comment(this.HTTPService);
     this.search = new Search(this.HTTPService);
+    this.category = new Category(this.HTTPService);
   }
 
   configure(
