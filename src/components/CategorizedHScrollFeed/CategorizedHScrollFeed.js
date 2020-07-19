@@ -47,7 +47,7 @@ function CategorizedHScrollFeed({ title, clientCallback, linkToSeeAll }) {
         <HScrollSlide>
           {data.map((row) => (
             <PrimaryCard
-              minWidth="250px"
+              // minWidth="250px"
               maxWidth="250px"
               url={row.slug}
               title={row.title}

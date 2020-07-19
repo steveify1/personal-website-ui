@@ -4,17 +4,17 @@ import SearchCard from '../Cards/SearchCard/SearchCard';
 
 function SearchResult({ result }) {
   const renderResult = () => {
-    return result.map((r) => {
+    return result.map((row) => {
       return (
         <div className="result">
           <SearchCard
-            image={r.img_url}
-            title={r.title}
-            slug={r.slug}
-            body={r.body}
-            date={r.date}
-            author={r.author}
-            category={r.category}
+            image={row.img_url}
+            title={row.title}
+            slug={row.slug}
+            body={row.body}
+            date={row.date}
+            author={row.author}
+            category={row.category}
           />
         </div>
       );

@@ -1,8 +1,8 @@
 import React from 'react';
 import CategoryPageWrapperWithArticles from '../../components/CategoryPageWrapperWithArticles/CategoryPageWrapperWithArticles';
 
-function JCC() {
-  return <CategoryPageWrapperWithArticles title='JCC' category='jcc' />
+function JJC() {
+  return <CategoryPageWrapperWithArticles title="JJC" category="jjc" />;
 }
 
-export default JCC;
+export default JJC;

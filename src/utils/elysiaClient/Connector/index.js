@@ -1,5 +1,6 @@
 import axios from 'axios';
 import queryString from 'query-string';
+import Cache from './cache';
 
 export default class APIConnector {
   constructor(HTTPService, resource) {
@@ -11,6 +12,7 @@ export default class APIConnector {
         // withCredentials: true,
       },
     };
+    this.cache = new Cache();
   }
 
   attachIdentifier(identifier) {
@@ -57,10 +59,17 @@ export default class APIConnector {
    */
   async getAll(options = { queryParams: {} }) {
     const url = this.composeUrl({ queryParams: options.queryParams });
-    return await this.HTTPService.get(
+
+    const cachedValue = this.cache.get(url);
+    if (cachedValue) return cachedValue;
+
+    const result = await this.HTTPService.get(
       options.url || url,
       this.composeOptions(options)
     );
+
+    this.cache.set(url, result);
+    return result;
   }
 
   /**
@@ -71,7 +80,16 @@ export default class APIConnector {
       identifier,
       queryParams: options.queryParams,
     });
-    return await this.HTTPService.get(url, this.composeOptions(options));
+
+    const cachedValue = this.cache.get(url);
+    if (cachedValue) return cachedValue;
+
+    const result = await this.HTTPService.get(
+      url,
+      this.composeOptions(options)
+    );
+    this.cache.set(url, result);
+    return result;
   }
 
   /**

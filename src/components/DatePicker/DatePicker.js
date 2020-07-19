@@ -23,6 +23,7 @@ function DatePicker({ disabled, onPicked, className }) {
           selected={date}
           showYearDropdown
           showMonthDropdown
+          disabledKeyboardNavigation
           disabled={disabled}
           onChange={handleChange}
           placeholderText="mm/dd/yyyy"

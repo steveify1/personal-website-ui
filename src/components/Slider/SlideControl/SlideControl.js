@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { connect } from 'react-redux';
 
 export const useScrollControls = (options = {}) => {
@@ -60,7 +61,11 @@ export const SlideControl = ({ direction, content, onClick, rounded }) => {
         }`}
         onClick={onClick}
       >
-        {content || direction === 'left' ? '<' : '>'}
+        {content || direction === 'left' ? (
+          <IoIosArrowBack className="icon" />
+        ) : (
+          <IoIosArrowForward className="icon" />
+        )}
       </div>
     </div>
   );

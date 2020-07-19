@@ -1,8 +1,8 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import DatePicker, { today } from '../DatePicker/DatePicker';
 import { IoIosCalendar } from 'react-icons/io';
-import Banner from '../Banner/PlainBanner';
 import PlainBanner from '../Banner/PlainBanner';
+import elysiaClient from '../../utils/elysiaClient';
 
 const getFormattedDate = (value = '') => {
   const date = value ? new Date(value) : new Date();
@@ -40,11 +40,19 @@ function CategoryPage({
   const fetchData = async (date) => {
     setDisableDatePicker(true);
     provideData(null);
-    setTimeout(() => {
-      provideData([]);
+    const res = await elysiaClient.articles.getAll({
+      queryParams: {
+        category,
+        date_published: date,
+      },
+    });
+
+    if (res) {
+      provideData(res.data.data.rows);
       provideSelectedDate(new Date(date).toDateString());
-      setDisableDatePicker(false);
-    }, 500);
+    }
+
+    setDisableDatePicker(false);
   };
 
   useEffect(() => {
@@ -82,7 +90,7 @@ function CategoryPage({
                 />
               </div>
 
-              <section className="category-page__content grid grid-3">
+              <section className="category-page__content grid grid-3 gap-1">
                 {children}
               </section>
             </div>

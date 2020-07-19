@@ -9,7 +9,7 @@ function RecentFeed() {
       clientCallback={async () =>
         await elysiaClient.articles.getAll({
           queryParams: {
-            limit: 5,
+            limit: 12,
           },
         })
       }
